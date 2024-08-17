@@ -11,7 +11,3 @@ class Circle(Figure):
 
     def get_area(self):
         return math.pi * self.side_a ** 2
-
-circle_perimeter = Circle(5)
-circle_area = Circle(5)
-
