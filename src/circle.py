@@ -1,5 +1,5 @@
 import math
-from figures_homework.src.figure import Figure
+from src.figure import Figure
 
 
 class Circle(Figure):
@@ -8,6 +8,7 @@ class Circle(Figure):
 
     def get_perimeter(self):
         return self.side_a * math.pi * 2
+
 
     def get_area(self):
         return math.pi * self.side_a ** 2
