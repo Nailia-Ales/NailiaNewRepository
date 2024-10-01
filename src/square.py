@@ -1,8 +1,10 @@
 import math
-from figures_homework.src.rectangle import Rectangle
+from src.Rectangle import Rectangle
 
 
 class Square(Rectangle):
-    def __init__(self, side_a, side_b):
-        super().__init__(side_a, side_b)
-
+    def __init__(self, side_a):
+        if side_a <= 0:
+            raise ValueError("...")
+        super().__init__(side_a, side_a)
+        self.name = "Square"
