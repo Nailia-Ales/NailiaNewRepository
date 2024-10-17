@@ -1,4 +1,4 @@
-from figure import Figure
+from src.figure import Figure
 import math
 
 
@@ -7,8 +7,10 @@ class Rectangle(Figure):
         self.side_a = side_a
         self.side_b = side_b
 
+
     def get_perimeter(self):
-        return self.side_a + self.side_b + self.side_a + self.side_b
+        return 2 * (self.side_a + self.side_b)
+
 
     def get_area(self):
         return self.side_a * self.side_b
