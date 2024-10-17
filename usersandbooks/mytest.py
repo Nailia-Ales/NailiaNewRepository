@@ -11,7 +11,6 @@ with open('books.csv', 'r', encoding='utf-8') as f1, \
     books_per_user = k_books // k_users
     left_to_give_again = k_books % k_users
 
-print(k_books, k_users)
 for i, user in enumerate(dct_of_users):
     start_index = i * books_per_user
     end_index = start_index + books_per_user
@@ -24,6 +23,14 @@ for i, user in enumerate(dct_of_users, start=0):
     end_index += 1
     user['books'].append(lst_of_books[end_index])
 
+final_res = []
+
+for user in dct_of_users:
+    dct = {}
+    for info in user:
+        if info in ('name', 'gender', 'address', 'age', 'books'):
+            dct[info] = user[info]
+    final_res.append(dct)
 
 with open('result.json', 'w', encoding='utf-8') as res_file:
-    json.dump(dct_of_users, res_file, indent=4)
+    json.dump(final_res, res_file, indent=4)
